@@ -3,11 +3,11 @@ NAME = minishell
 
 #	FLAG_COMPILATION
 CC = clang
-FLAGS = -Wall -Werror -Wextra
-HEADERS_DIR = ./includes/
+CFLAGS = -Wall -Werror -Wextra
 INCLUDES = -I$(HEADERS_DIR)
 
 #	HEADERS
+HEADERS_DIR = ./includes/
 HEADERS_LIST = minishell.h
 HEADERS = $(addprefix $(HEADERS_DIR), $(HEADERS_LIST))
 
@@ -31,7 +31,7 @@ END = \033[0m
 all: $(NAME)
 
 $(NAME): $(OBJS_DIR) $(OBJS)
-	@$(CC) $(FLAGS) $(INCLUDES) $(OBJS) -o $(NAME)
+	@$(CC) $(CFLAGS) $(INCLUDES) $(OBJS) -o $(NAME)
 	@echo "$(GREEN) $(NAME) created. $(RESET)"
 
 $(OBJS_DIR):
@@ -39,7 +39,7 @@ $(OBJS_DIR):
 	@echo "$(GREEN) Object files directory was created. $(RESET)"
 
 $(OBJS_DIR)%.o : $(SRCS_DIR)%.c $(HEADERS)
-	@$(CC) $(FLAGS) -c $(INCLUDES) $< -o $@
+	@$(CC) $(CFLAGS) -c $(INCLUDES) $< -o $@
 
 clean:
 	@rm -rf $(OBJS)
