@@ -8,7 +8,7 @@ def file_md(f_md, line_md):
     f_md.close()
 
 
-with open("allow_ft.txt", "r") as file:
+with open("/Users/celadia/school21/minishell/docs/script/allow_ft.txt", "r") as file:
     for line in file:
         line = line.replace("\n", "")
-        file_md(open("md/" + line + ".md", "w"), line)
+        file_md(open("/Users/celadia/school21/minishell/docs/allow_ft/" + line + ".md", "w"), line)
