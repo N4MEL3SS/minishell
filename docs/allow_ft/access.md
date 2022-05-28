@@ -10,4 +10,4 @@ access - проверяет, имеет ли процесс права на чт
 int access(const char *pathname, int mode);
 ```
 
-[man access](https://www.opennet.ru/man.shtml?topic=access&category=2&russian=0)
+[man access](https://www.opennet.ru/man.shtml?topic=access)

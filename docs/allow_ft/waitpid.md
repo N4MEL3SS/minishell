@@ -13,4 +13,4 @@
 pid_t waitpid(pid_t pid, int *status, int options);  
 ```
 
-[man waitpid](https://www.opennet.ru/man.shtml?topic=wait&category=2&russian=0)
+[man waitpid](https://www.opennet.ru/man.shtml?topic=wait)

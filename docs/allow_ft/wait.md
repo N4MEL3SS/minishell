@@ -13,4 +13,4 @@
 pid_t wait(int *status);
 ```
 
-[man wait](https://www.opennet.ru/man.shtml?topic=wait&category=2&russian=0)
+[man wait](https://www.opennet.ru/man.shtml?topic=wait)

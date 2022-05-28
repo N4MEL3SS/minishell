@@ -4,7 +4,7 @@ def file_md(f_md, line_md):
     f_md.write("\n")
     f_md.write("```\n")
     f_md.write("\n")
-    f_md.write("[man " + line_md + "]()\n")
+    f_md.write("[man " + line_md + "](https://www.opennet.ru/man.shtml?topic=" + line_md + ")\n")
     f_md.close()
 
 
