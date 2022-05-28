@@ -13,7 +13,8 @@ char	*dir_name(void)
 	while (dir_str[len - 1] != '/')
 		len--;
 //	printf("%s\n", &dir_str[len]);
-	return (&dir_str[len]);
+	dir_str = &dir_str[len];
+	return (dir_str);
 }
 
 int	main(int argc, char **argv, char **envp)

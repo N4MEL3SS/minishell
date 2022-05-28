@@ -1,0 +1,9 @@
+# isatty
+
+
+
+```
+
+```
+
+[man isatty]()

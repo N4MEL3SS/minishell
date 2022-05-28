@@ -1,0 +1,9 @@
+# getcwd
+
+
+
+```
+
+```
+
+[man getcwd]()

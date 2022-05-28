@@ -1,0 +1,9 @@
+# tcgetattr
+
+
+
+```
+
+```
+
+[man tcgetattr]()

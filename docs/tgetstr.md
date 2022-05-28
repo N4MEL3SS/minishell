@@ -1,0 +1,9 @@
+# tgetstr
+
+
+
+```
+
+```
+
+[man tgetstr]()

@@ -1,0 +1,9 @@
+# closedir
+
+
+
+```
+
+```
+
+[man closedir]()

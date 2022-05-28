@@ -1,0 +1,9 @@
+# ttyname
+
+
+
+```
+
+```
+
+[man ttyname]()

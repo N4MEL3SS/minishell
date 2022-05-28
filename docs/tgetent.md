@@ -1,0 +1,9 @@
+# tgetent
+
+
+
+```
+
+```
+
+[man tgetent]()

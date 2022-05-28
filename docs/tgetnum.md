@@ -1,0 +1,9 @@
+# tgetnum
+
+
+
+```
+
+```
+
+[man tgetnum]()

@@ -1,0 +1,9 @@
+# ttyslot
+
+
+
+```
+
+```
+
+[man ttyslot]()

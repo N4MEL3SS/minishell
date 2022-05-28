@@ -1,0 +1,9 @@
+# printf
+
+
+
+```
+
+```
+
+[man printf]()

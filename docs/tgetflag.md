@@ -1,0 +1,9 @@
+# tgetflag
+
+
+
+```
+
+```
+
+[man tgetflag]()
