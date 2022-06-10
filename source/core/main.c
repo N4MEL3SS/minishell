@@ -1,13 +1,14 @@
 #include "minishell.h"
 
-int	main(int argc, char **argv, char **envp)
-{
-	char	*rl_str;
-	char	*env;
+int	g_exit_status;
 
-	rl_str = readline("minishell > ");
-	env = getenv("PATH");
-	printf("%s\n", env);
-	free(rl_str);
+int	main(int argc, char **argv, char **env_ptr)
+{
+	t_mini_sh	shell;
+
+	init_shell(&shell);
+	dup_env(env_ptr, &shell);
+	while (g_exit_status != -1)
+		minishell(&shell);
 	return (0);
 }

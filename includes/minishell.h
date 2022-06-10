@@ -18,37 +18,51 @@
 # include <readline/readline.h> /* readline, rl_clear_history,
  * rl_on_new_line, rl_replace_line, rl_redisplay, add_history */
 
-typedef struct s_env_list
-{
-	void				*name;
-	void				*context;
-	struct s_env_list	*prev;
-	struct s_env_list	*next;
-}				t_env_list;
+# include "libft.h"
+# include "message.h"
 
-typedef struct s_input
+extern int	g_exit_status;
+
+typedef struct s_lst
 {
-	int			fd[2][2];
-	int			status;
-	int			fd_in;
-	int			fd_out;
-	int			err_flag;
-	int			infile_flag;
-	int			outfile_flag;
-	int			here_doc_flag;
-	int			back_stdout;
-	int			path_unset;
-	int			total_pipes;
-	int			*q_state;
-	char		*user_in;
-	char		*cmd_path;
-	char		**split_path;
-	char		**split_in;
-	char		**dup_env;
-	t_env_list	**env_list;
-}				t_rd_input;
+	char			*str;
+	struct s_lst	*next;
+}			t_lst;
+
+typedef struct s_quote_flags
+{
+	int	count_q;
+	int	count_double_q;
+	int	single_q;
+	int	double_q;
+}		t_quote_flags;
+
+typedef struct s_mini_sh
+{
+	char			*input;
+	t_lst			*env_lst;
+	t_lst			*path_lst;
+	t_quote_flags	q_flags;
+}			t_mini_sh;
 /* t_rd_input - readline_input */
 
-int	ft_strlen(const char *str);
+void	init_shell(t_mini_sh *shell);
+void	init_quote_flags(t_quote_flags *q_flags);
+
+void	dup_env(char **env_ptr, t_mini_sh *shell);
+void	minishell(t_mini_sh *shell);
+
+void	parse_input(t_mini_sh *shell);
+
+void	handler_sigint(int code);
+void	handler_sigquit(int code);
+
+t_lst	*lst_new(void *content);
+t_lst	*lst_last(t_lst *lst);
+void	lst_add_back(t_lst **lst, t_lst *new);
+
+void	lst_clear(t_lst **lst);
+
+void	clear(t_mini_sh *shell);
 
 #endif //MINISHELL_H
