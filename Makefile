@@ -23,13 +23,19 @@ FLAGS = -L $(LIBFT) -lft $(READLINE)
 
 DIR_SRCS = sources
 DIR_OBJS = objects
-DIRS = lexer parser builtins exec core hashmap variable_expansion
+DIRS = builtins				\
+		core				\
+		exec				\
+		hashmap				\
+		lexer				\
+		parser				\
+		variable_expansion
 
 SRC = $(wildcard $(DIR_SRCS)/*.c)
 SOURCEDIRS = $(foreach dir, $(DIRS), $(addprefix $(DIR_SRCS)/, $(dir)))
 SOURCES = $(foreach dir,$(SOURCEDIRS),$(wildcard $(dir)/*.c))
 
-OBJS = $(subst $(DIR_SRCS),$(DIR_OBJS),$(SOURCES:.c=.o))
+OBJS = $(subst $(DIR_SRCS), $(DIR_OBJS), $(SOURCES:.c=.o))
 
 ifeq ($(SANITIZE_A),true)
 	CFLAGS += -fsanitize=address -fno-omit-frame-pointer
@@ -40,23 +46,23 @@ ifeq ($(SANITIZE_L),true)
 endif
 
 
-all: $(NAME)
-
 $(NAME): $(OBJS)
 		@make -C $(LIBFT)
 		@-$(CC) $(CFLAGS) $(OBJS) $(FLAGS) $(HEADER) -o $(NAME)
 
 $(DIR_OBJS)/%.o: $(DIR_SRCS)/%.c
 		@mkdir -p objects
-		@mkdir -p objects/tokenizer
+		@mkdir -p objects/lexer
 		@mkdir -p objects/parser
 		@mkdir -p objects/builtins
 		@mkdir -p objects/exec
-		@mkdir -p objects/system
+		@mkdir -p objects/core
 		@mkdir -p objects/hashmap
 		@mkdir -p objects/variable_expansion
 		@$(CC) $(CFLAGS) $(HEADER) -c $< -o $@
 		@echo "Compiled "$<" successfully!"
+
+all: $(NAME)
 
 clean:
 		@make clean -C $(LIBFT)
