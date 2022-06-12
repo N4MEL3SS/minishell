@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   input.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lcouto <lcouto@student.42sp.org.br>        +#+  +:+       +#+        */
+/*   By: null <null@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/28 20:31:27 by lfrasson          #+#    #+#             */
-/*   Updated: 2021/07/31 22:49:17 by lcouto           ###   ########.fr       */
+/*   Created: 2022/06/12 03:38:13 by null              #+#    #+#             */
+/*   Updated: 2022/06/12 03:38:13 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef INPUT_H
 # define INPUT_H
 
-# include "libft.h"
 # include <readline/readline.h>
 # include <readline/history.h>
 
@@ -35,10 +34,6 @@
 # define BOLD_WHITE "\033[1;37m"
 # define RESET_COLOR "\033[0m"
 
-/*
- * Escaped color codes for readline library
- */
-
 # define ESC_BLACK "\001\033[0;30m"
 # define ESC_BOLD_BLACK "\001\033[1;30m\002"
 # define ESC_RED "\001\033[0;31m\002"
@@ -57,7 +52,7 @@
 # define ESC_BOLD_WHITE "\001\033[1;37m\002"
 # define ESC_RESET_COLOR "\001\033[0m\002"
 
-char	*create_prompt(bool *emoji);
+char	*create_prompt(void);
 void	define_input_signals(void);
 void	define_exec_signals(void);
 

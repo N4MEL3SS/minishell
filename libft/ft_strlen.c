@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: null <null@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/02 02:05:11 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/04/19 20:44:14 by phemsi-a         ###   ########.fr       */
+/*   Created: 2022/06/12 03:41:09 by null              #+#    #+#             */
+/*   Updated: 2022/06/12 03:41:09 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ size_t	ft_strlen(const char *s)
 
 	length = 0;
 	while (s[length] != '\0')
-	{
 		length++;
-	}
 	return (length);
 }

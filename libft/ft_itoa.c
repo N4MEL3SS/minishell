@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: null <null@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/04 23:51:11 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/04/19 20:49:26 by phemsi-a         ###   ########.fr       */
+/*   Created: 2022/06/12 03:39:15 by null              #+#    #+#             */
+/*   Updated: 2022/06/12 03:39:15 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,9 @@
 static int	itoa_isnegative(int number)
 {
 	if (number < 0)
-	{
 		return (1);
-	}
 	else
-	{
 		return (0);
-	}
 }
 
 static int	itoa_countdigit(unsigned int number)
@@ -29,9 +25,7 @@ static int	itoa_countdigit(unsigned int number)
 	size_t	digits;
 
 	if (number == 0)
-	{
 		return (1);
-	}
 	digits = 0;
 	while (number >= 1)
 	{

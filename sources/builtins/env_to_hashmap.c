@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   env_to_hashmap.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lcouto <lcouto@student.42sp.org.br>        +#+  +:+       +#+        */
+/*   By: null <null@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/11 17:04:52 by lcouto            #+#    #+#             */
-/*   Updated: 2021/07/18 18:21:10 by lcouto           ###   ########.fr       */
+/*   Created: 2022/06/12 03:45:39 by null              #+#    #+#             */
+/*   Updated: 2022/06/12 03:45:39 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-static char	*env_array_find_value(char *env_line)
+static char	*env_find_value(char *env_line)
 {
 	int		i;
 	int		j;
@@ -28,7 +28,7 @@ static char	*env_array_find_value(char *env_line)
 	return (value);
 }
 
-static char	*env_array_find_key(char *env_line)
+static char	*env_find_key(char *env_line)
 {
 	int		i;
 	char	*key;
@@ -42,23 +42,22 @@ static char	*env_array_find_key(char *env_line)
 
 t_hashmap	*env_to_hashmap(char **env)
 {
+	t_hashmap	*table;
 	int			len;
 	int			i;
-	t_hashmap	*table;
 	char		*key;
 	char		*value;
 
 	len = 0;
-	i = 0;
+	i = -1;
 	while (env[len])
 		len++;
 	table = hashmap_create_table(len * 2);
-	while (i < len)
+	while (++i < len)
 	{
-		key = env_array_find_key(env[i]);
-		value = env_array_find_value(env[i]);
+		key = env_find_key(env[i]);
+		value = env_find_value(env[i]);
 		hashmap_insert(key, value, table);
-		i++;
 		free(key);
 		free(value);
 	}

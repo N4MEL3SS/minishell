@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cd.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lcouto <lcouto@student.42sp.org.br>        +#+  +:+       +#+        */
+/*   By: null <null@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/21 20:33:57 by lcouto            #+#    #+#             */
-/*   Updated: 2021/08/07 16:15:28 by lcouto           ###   ########.fr       */
+/*   Created: 2022/06/12 03:45:24 by null              #+#    #+#             */
+/*   Updated: 2022/06/12 03:45:24 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void	change_dir_to_path(char *path)
 
 static void	change_dir_to_oldpwd(char *path)
 {
-	ft_printf("%s\n", path);
+	printf("%s\n", path);
 	change_dir_to_path(path);
 }
 

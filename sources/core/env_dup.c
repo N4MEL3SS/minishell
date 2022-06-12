@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isnegative.c                                    :+:      :+:    :+:   */
+/*   env_dup.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: null <null@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/05 21:01:15 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/02/08 20:50:46 by phemsi-a         ###   ########.fr       */
+/*   Created: 2022/06/12 03:47:25 by null              #+#    #+#             */
+/*   Updated: 2022/06/12 03:47:25 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isnegative(int number)
+#include "minishell.h"
+
+void	env_dup(char **env)
 {
-	if (number < 0)
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
+	g_minishell.env = env_to_hashmap(env);
+	g_minishell.local_vars = hashmap_create_table(50);
+	g_minishell.error_status = 0;
 }

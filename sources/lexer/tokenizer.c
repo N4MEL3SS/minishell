@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tokenizer.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: null <null@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/21 11:01:46 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/08/03 13:11:29 by phemsi-a         ###   ########.fr       */
+/*   Created: 2022/06/12 03:49:29 by null              #+#    #+#             */
+/*   Updated: 2022/06/12 03:49:29 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	check_eof(char *line)
 {
 	if (line)
 		return ;
-	ft_printf("exit\n");
+	printf("exit\n");
 	exit_minishell();
 }
 

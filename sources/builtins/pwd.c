@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pwd.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lcouto <lcouto@student.42sp.org.br>        +#+  +:+       +#+        */
+/*   By: null <null@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/18 18:43:47 by lfrasson          #+#    #+#             */
-/*   Updated: 2021/08/01 11:54:38 by lfrasson         ###   ########.fr       */
+/*   Created: 2022/06/12 03:46:19 by null              #+#    #+#             */
+/*   Updated: 2022/06/12 03:46:19 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	pwd(void)
 	g_minishell.error_status = 0;
 	cwd = get_current_working_directory();
 	if (cwd)
-		ft_printf("%s\n", cwd);
+		printf("%s\n", cwd);
 	else
 		error_message("pwd", strerror(errno), 1);
 	free(cwd);

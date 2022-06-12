@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exit.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: null <null@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/31 17:29:00 by lfrasson          #+#    #+#             */
-/*   Updated: 2021/09/30 14:24:33 by phemsi-a         ###   ########.fr       */
+/*   Created: 2022/06/12 03:45:45 by null              #+#    #+#             */
+/*   Updated: 2022/06/12 03:45:45 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,6 @@ void	exit_builtin(char **argv)
 		error_message("exit", TOO_MANY_ARGS, 1);
 		return ;
 	}
-	ft_printf("exit\n");
+	printf("exit\n");
 	exit_minishell();
 }

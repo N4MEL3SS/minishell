@@ -3,19 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   hash.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lcouto <lcouto@student.42.fr>              +#+  +:+       +#+        */
+/*   By: null <null@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/07 19:59:44 by user42            #+#    #+#             */
-/*   Updated: 2021/07/11 17:07:25 by lcouto           ###   ########.fr       */
+/*   Created: 2022/06/12 03:48:03 by null              #+#    #+#             */
+/*   Updated: 2022/06/12 03:48:03 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
-
-/*
-** This function is an implementation of the djb2 hashing algorithm.
-** Further info: https://theartincode.stanis.me/008-djb2/
-*/
 
 unsigned long int	hash(char *key, unsigned int size)
 {

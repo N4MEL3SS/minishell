@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: null <null@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/27 17:28:42 by lcouto            #+#    #+#             */
-/*   Updated: 2021/08/03 09:19:46 by lfrasson         ###   ########.fr       */
+/*   Created: 2022/06/12 03:47:41 by null              #+#    #+#             */
+/*   Updated: 2022/06/12 03:47:41 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,28 +18,26 @@ static void	save_history(char *input)
 		add_history(input);
 }
 
-static void	read_input(char **input, bool *emoji)
+static void	read_input(char **input)
 {
 	char	*prompt;
 
-	prompt = create_prompt(emoji);
+	prompt = create_prompt();
 	define_input_signals();
 	*input = readline(prompt);
 	free(prompt);
 }
 
-static void	repl(void)
+static void	shell_line(void)
 {
-	bool	emoji;
 	char	*input;
 	t_token	*token_lst;
 
-	emoji = false;
 	while (true)
 	{
 		token_lst = NULL;
 		input = NULL;
-		read_input(&input, &emoji);
+		read_input(&input);
 		save_history(input);
 		tokenizer(&input, &token_lst);
 		parse_and_execute(token_lst);
@@ -49,13 +47,14 @@ static void	repl(void)
 	}
 }
 
-int	main(int argc, char **argv)
+int	main(int argc, char **argv, char **env)
 {
-	if (argc > 1 && argv)
-		error_message("👿", TOO_MANY_ARGS, 666);
-	g_minishell.env = env_to_hashmap(__environ);
-	g_minishell.local_vars = hashmap_create_table(50);
-	g_minishell.error_status = 0;
-	repl();
+	if (argc == 1 && argv)
+	{
+		env_dup(env);
+		shell_line();
+	}
+	else
+		error_message("exit", TOO_MANY_ARGS, 666);
 	return (0);
 }

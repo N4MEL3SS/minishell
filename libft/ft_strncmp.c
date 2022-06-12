@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: null <null@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/08 11:34:47 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/02/09 18:45:40 by phemsi-a         ###   ########.fr       */
+/*   Created: 2022/06/12 03:41:14 by null              #+#    #+#             */
+/*   Updated: 2022/06/12 03:41:14 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	while ((s1_cast[i] != '\0' || s2_cast[i] != '\0') && i < n)
 	{
 		if (s1_cast[i] != s2_cast[i])
-		{
 			return (s1_cast[i] - s2_cast[i]);
-		}
 		i++;
 	}
 	return (0);

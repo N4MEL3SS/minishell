@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: null <null@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/06 21:30:52 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/02/08 11:30:15 by phemsi-a         ###   ########.fr       */
+/*   Created: 2022/06/12 03:39:40 by null              #+#    #+#             */
+/*   Updated: 2022/06/12 03:39:40 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *str, int fd)
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	while (str && *str)
+		write(fd, str++, 1);
+	write(fd, "\n", 1);
 }

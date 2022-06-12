@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   message.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: null <null@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/08 11:41:52 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/02/08 20:51:06 by phemsi-a         ###   ########.fr       */
+/*   Created: 2022/06/12 03:47:35 by null              #+#    #+#             */
+/*   Updated: 2022/06/12 03:47:35 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include "minishell.h"
+
+void	error_message(char *input, char *error_message, int status)
 {
-	if (c >= 'A' && c <= 'Z')
-	{
-		return (1);
-	}
-	else if (c >= 'a' && c <= 'z')
-	{
-		return (2);
-	}
-	else
-	{
-		return (0);
-	}
+	printf("%sminishell> %s%s: %s%s\n", BOLD_YELLOW, YELLOW, input, \
+		error_message, RESET_COLOR);
+	g_minishell.error_status = status;
 }

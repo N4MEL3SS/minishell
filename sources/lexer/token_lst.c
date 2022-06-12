@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   token_lst.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: null <null@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/22 19:56:24 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/07/22 17:43:15 by phemsi-a         ###   ########.fr       */
+/*   Created: 2022/06/12 03:49:25 by null              #+#    #+#             */
+/*   Updated: 2022/06/12 03:49:25 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_token	*token_new(char *value, int type)
 	new_token->value = value;
 	new_token->type = type;
 	new_token->next = NULL;
-	new_token->previous = NULL;
+	new_token->prev = NULL;
 	return (new_token);
 }
 
@@ -51,7 +51,7 @@ void	token_add_back(t_token **lst, t_token *new_token)
 	}
 	aux = token_last(*lst);
 	aux->next = new_token;
-	new_token->previous = aux;
+	new_token->prev = aux;
 }
 
 void	token_list_clear(t_token **lst)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: null <null@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/08 11:31:06 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/02/08 21:03:09 by phemsi-a         ###   ########.fr       */
+/*   Created: 2022/06/12 03:39:50 by null              #+#    #+#             */
+/*   Updated: 2022/06/12 03:39:50 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 
 void	ft_putstr(char const *s)
 {
-	if (!s)
-		return ;
-	while (*s != '\0')
-	{
-		ft_putchar(*s);
-		s++;
-	}
+	while (s && *s != '\0')
+		write(1, s++, 1);
 }

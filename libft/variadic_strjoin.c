@@ -3,20 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   variadic_strjoin.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: null <null@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/17 21:43:27 by lcouto            #+#    #+#             */
-/*   Updated: 2021/07/30 20:32:45 by phemsi-a         ###   ########.fr       */
+/*   Created: 2022/06/12 03:41:34 by null              #+#    #+#             */
+/*   Updated: 2022/06/12 03:41:34 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/*
-** Note to the user: variadic function argument lists are NOT null terminated and
-** there is no way to test if the list is over. Therefore, this function trusts
-** the user to enter the correct quantity of arguments, otherwise it'll segfault.
-*/
 
 char	*variadic_strjoin(unsigned int arg_quantity, ...)
 {
@@ -27,9 +21,9 @@ char	*variadic_strjoin(unsigned int arg_quantity, ...)
 	char			*result;
 
 	va_start(arg_list, arg_quantity);
-	i = 0;
+	i = -1;
 	result = NULL;
-	while (i < arg_quantity)
+	while (++i < arg_quantity)
 	{
 		arg_buffer = va_arg(arg_list, char *);
 		if (result == NULL)
@@ -40,7 +34,6 @@ char	*variadic_strjoin(unsigned int arg_quantity, ...)
 			free(result);
 			result = temp;
 		}
-		i++;
 	}
 	va_end(arg_list);
 	return (result);

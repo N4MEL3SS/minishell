@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: null <null@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/06/27 17:05:36 by lcouto            #+#    #+#              #
-#    Updated: 2021/08/02 19:16:51 by lfrasson         ###   ########.fr        #
+#    Created: 2022/06/12 03:37:28 by null              #+#    #+#              #
+#    Updated: 2022/06/12 03:37:28 by null             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,8 @@ NAME = minishell
 HEADERS = -I includes -I libft
 CC	= clang
 RM	= rm -rf
-CFLAGS	= -Wall -Wextra -Werror -g $(HEADERS)
-TCAPS = -ltermcap
-READLINE = -lreadline -lncurses
+CFLAGS	= -Wall -Wextra -Werror $(HEADERS)
+READLINE = -lreadline
 LIBFT = libft
 FLAGS = -L $(LIBFT) -lft $(READLINE)
 
@@ -37,18 +36,18 @@ SOURCES = $(foreach dir,$(SOURCEDIRS),$(wildcard $(dir)/*.c))
 
 OBJS = $(subst $(DIR_SRCS), $(DIR_OBJS), $(SOURCES:.c=.o))
 
-ifeq ($(SANITIZE_A),true)
-	CFLAGS += -fsanitize=address -fno-omit-frame-pointer
-endif
-
-ifeq ($(SANITIZE_L),true)
-	CFLAGS += -fsanitize=leak -fno-omit-frame-pointer
-endif
+GREEN = \033[0;32m
+WHITE = \033[0;37m
+YELLOW = \033[0;33m
+BLUE = \033[0;34m
+RED = \033[0;31m
+END = \033[0m
 
 
 $(NAME): $(OBJS)
-		@make -C $(LIBFT)
+		@make -s all -C $(LIBFT)
 		@-$(CC) $(CFLAGS) $(OBJS) $(FLAGS) $(HEADER) -o $(NAME)
+		@echo "$(GREEN)$(NAME) created.$(RESET)"
 
 $(DIR_OBJS)/%.o: $(DIR_SRCS)/%.c
 		@mkdir -p objects
@@ -60,25 +59,24 @@ $(DIR_OBJS)/%.o: $(DIR_SRCS)/%.c
 		@mkdir -p objects/hashmap
 		@mkdir -p objects/variable_expansion
 		@$(CC) $(CFLAGS) $(HEADER) -c $< -o $@
-		@echo "Compiled "$<" successfully!"
+		@echo "$(BLUE)Compiled $(WHITE)"$<"$(BLUE) successfully!$(RESET)"
 
 all: $(NAME)
 
 clean:
-		@make clean -C $(LIBFT)
+		@make -s clean -C $(LIBFT)
+		@echo "$(YELLOW)libft cleaned.$(RESET)"
 		@$(RM) $(OBJS)
 		@$(RM) $(DIR_OBJS)
-		@echo "project cleaned."
+		@echo "$(YELLOW)$(NAME) cleaned.$(RESET)"
 
 fclean:	clean
-		make fclean -C $(LIBFT)
+		@make -s fclean -C $(LIBFT)
+		@echo "$(RED)libft deleted.$(RESET)"
 		@$(RM) $(NAME)
 		@$(RM) $(DIR_OBJS)
-		@echo "project deleted."
+		@echo "$(RED)$(NAME) deleted.$(RESET)"
 
 re:		fclean all
 
-install:
-	sudo apt-get install libreadline-dev
-
-PHONY:	all clean fclean re install
+PHONY:	all clean fclean re

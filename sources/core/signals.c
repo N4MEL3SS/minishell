@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   signals.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lcouto <lcouto@student.42sp.org.br>        +#+  +:+       +#+        */
+/*   By: null <null@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/14 17:07:19 by lfrasson          #+#    #+#             */
-/*   Updated: 2021/07/29 10:43:15 by lfrasson         ###   ########.fr       */
+/*   Created: 2022/06/12 03:47:48 by null              #+#    #+#             */
+/*   Updated: 2022/06/12 03:47:48 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void	quit_process(int signal)
 {
 	(void)signal;
 	g_minishell.error_status = 131;
-	ft_printf("Quit (core dumped)\n");
+	printf("Quit (core dumped)\n");
 }
 
 void	define_exec_signals(void)

@@ -3,21 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   parser.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: null <null@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/27 15:09:54 by phemsi-a          #+#    #+#             */
-/*   Updated: 2021/08/05 09:11:10 by lfrasson         ###   ########.fr       */
+/*   Created: 2022/06/12 03:38:31 by null              #+#    #+#             */
+/*   Updated: 2022/06/12 03:38:31 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PARSER_H
 # define PARSER_H
 
-# include "libft.h"
 # include "tokenizer.h"
-
-# define IN		0
-# define OUT	1
 
 void	parse_and_execute(t_token *token_lst);
 void	command_parser(t_token *token_lst, t_token *pipe, int *old_pipe_in);

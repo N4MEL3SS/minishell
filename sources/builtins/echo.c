@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   echo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phemsi-a <phemsi-a@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: null <null@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/25 02:59:47 by lcouto            #+#    #+#             */
-/*   Updated: 2021/08/01 11:36:41 by lfrasson         ###   ########.fr       */
+/*   Created: 2022/06/12 03:45:34 by null              #+#    #+#             */
+/*   Updated: 2022/06/12 03:45:34 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ void	echo(char **cmd)
 	}
 	while (cmd && cmd[i])
 	{
-		ft_printf("%s ", cmd[i]);
+		printf("%s ", cmd[i]);
 		i++;
 	}
 	if (n_flag == false)
-		ft_printf("\n");
+		printf("\n");
 	g_minishell.error_status = 0;
 }
