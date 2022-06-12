@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ERROR_H
-# define ERROR_H
+#ifndef MESSAGE_H
+# define MESSAGE_H
 
 # define NOT_FOUND "command not found."
 # define TOO_MANY_ARGS "too many arguments."
@@ -20,6 +20,7 @@
 # define NO_FILE_OR_DIR "no such file or directory."
 # define SYNTAX_ERROR "syntax error."
 # define NUM_ARG_REQUIRED "numeric argument required."
+# define EXPORT_ERR "not a valid identifier"
 
 void	error_message(char *input, char *error_message, int status);
 

@@ -14,6 +14,7 @@
 # define MINISHELL_H
 
 # include <stdbool.h>
+# include <string.h>
 # include <stdlib.h>
 # include <errno.h>
 # include <sys/stat.h>
@@ -81,7 +82,7 @@ void				hashmap_free_table(t_hashmap *table);
 void				hashmap_insert(char *key, char *value, t_hashmap *table);
 char				*hashmap_search(t_hashmap *table, char *key);
 void				hashmap_handle_collision(t_hashmap *table,
-		unsigned long int index, t_pair *new_pair);
+						unsigned long int index, t_pair *new_pair);
 void				hashmap_delete(t_hashmap *table, char *key);
 unsigned long int	hash(char *key, unsigned int size);
 

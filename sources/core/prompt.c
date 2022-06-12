@@ -30,7 +30,6 @@ char	*create_prompt(void)
 	char	*buffer;
 
 	buffer = NULL;
-
 	pwd = getcwd(buffer, 0);
 	end = ft_strdup("> ");
 	return (concatenate_prompt(pwd, end));

@@ -13,6 +13,7 @@
 #ifndef INPUT_H
 # define INPUT_H
 
+# include <stdio.h>
 # include <readline/readline.h>
 # include <readline/history.h>
 
